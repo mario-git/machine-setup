@@ -57,6 +57,7 @@ alias gdco="git diff --color-words"
 alias gp="git push --force-with-lease"
 alias gpf="git push --force"
 alias gl="git log"
+alias gnuke="git clean -fdx"
 alias gpl="git pull"
 alias greb="git pull --rebase"
 alias grem="git remote -v"
@@ -66,6 +67,9 @@ alias gundos="git reset --soft HEAD^"
 alias gundoh="git reset --hard HEAD^"
 
 alias sshco="vim ~/.ssh/config"
+
+# spacemacs
+alias sm="cd ~/.emacs.d"
 
 # terraform
 alias tf="terraform fmt"
