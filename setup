@@ -1,2 +1,3 @@
 ln -s "$(pwd)/zprofile" ~/.zprofile
 ln -s "$(pwd)/zshrc" ~/.zshrc
+ln -s "$(pwd)/p10k" ~/.p10k.zsh
