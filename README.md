@@ -1,8 +1,8 @@
 # Machine setup
 
-Currently WIP.
+My machine setup and dotfiles for Debian and Mac Os X.
 
-I aim to script machine setup with programs I use and dotfiles for Debian and Mac Os X.
+Currently WIP.
 
 ## Dependencies
 
