@@ -30,6 +30,14 @@ fi
 
 zplug load
 
+# os specific bits
+
+function debian_zshrc {
+    alias editsrc="sudo vim /etc/apt/sources.list"
+    export PATH="/home/mario/.local/bin:$PATH"
+}
+[[ $(uname -s) == "Linux" ]] && debian_zshrc
+
 ## aliases
 
 # aws-cli

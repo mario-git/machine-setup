@@ -1,6 +1,8 @@
-# TODO: handle both Mac and Deb stuff, here and anywhere else
-eval "$(/opt/homebrew/bin/brew shellenv)"
-alias editsrc="sudo vim /etc/apt/sources.list"
+function macosx_zprofile {
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+}
+
+[[ $(uname -s) == "Darwin" ]] && macosx_zprofile
 
 export PATH="$HOME/bin:$PATH"
 alias path="echo $PATH | tr  ':'  '\n' | nl"
