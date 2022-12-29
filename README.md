@@ -7,3 +7,7 @@ I aim to script machine setup with programs I use and dotfiles for Debian and Ma
 ## Dependencies
 
 Python3, pip, Ansible.
+
+## Usage
+
+Run `ansible-playbook main.yml`.
