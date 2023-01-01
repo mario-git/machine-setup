@@ -38,6 +38,11 @@ function debian_zshrc {
 }
 [[ $(uname -s) == "Linux" ]] && debian_zshrc
 
+# path
+
+export PATH="$HOME/bin:$PATH"
+alias path="echo $PATH | tr  ':'  '\n' | nl"
+
 ## aliases
 
 # aws-cli
@@ -77,8 +82,9 @@ alias gundoh="git reset --hard HEAD^"
 
 alias sshco="vim ~/.ssh/config"
 
-# spacemacs
-alias sm="cd ~/.emacs.d"
+# emacs
+alias sm="cd ~/spacemacs"
+function ep { emacs --with-profile $1 & disown; }
 
 # terraform
 alias tf="terraform fmt"
@@ -97,7 +103,10 @@ alias zp="vim ~/.zprofile"
 alias zs="vim ~/.zshrc"
 
 # directory navigation
+setopt auto_cd
+
 alias -- -="cd -"
+alias -- ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."

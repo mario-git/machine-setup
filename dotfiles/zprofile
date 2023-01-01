@@ -4,11 +4,6 @@ function macosx_zprofile {
 
 [[ $(uname -s) == "Darwin" ]] && macosx_zprofile
 
-export PATH="$HOME/bin:$PATH"
-alias path="echo $PATH | tr  ':'  '\n' | nl"
-
-setopt auto_cd
-
 for file in ~/.zprofile.d/*
 do
   source $file
