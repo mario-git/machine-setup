@@ -1,4 +1,5 @@
 dotfiles:
   - { src: 'dotfiles/p10k', dest: '~/.p10k.zsh' }
+  - { src: 'dotfiles/vimrc', dest: '~/.vimrc' }
   - { src: 'dotfiles/zprofile', dest: '~/.zprofile' }
   - { src: 'dotfiles/zshrc', dest: '~/.zshrc' }

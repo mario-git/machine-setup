@@ -1,0 +1,10 @@
+inoremap fd <ESC>
+vnoremap fd <ESC>
+set history=200
+set number
+set noswapfile
+set hlsearch
+set ignorecase
+set incsearch
+syntax on
+vnoremap . :norm.<CR>
