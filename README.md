@@ -10,4 +10,4 @@ Python3, pip, Ansible.
 
 ## Usage
 
-Run `ansible-playbook playbook.yml`.
+`run` script, which executes `ansible-playbook playbook.yml`.
