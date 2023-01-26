@@ -98,6 +98,8 @@ alias sshco="vim ~/.ssh/config"
 alias sm="cd ~/spacemacs"
 function ep { emacs --with-profile $1 & disown; }
 
+alias rr="ranger"
+
 # terraform
 alias tf="terraform fmt"
 alias tg="terraform get"
