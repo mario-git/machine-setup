@@ -102,8 +102,15 @@ alias gundoh="git reset --hard HEAD^"
 alias sshco="vim ~/.ssh/config"
 
 # emacs
+alias em="cd ~/.emacs.d"
 alias sm="cd ~/spacemacs"
-function ep { emacs --with-profile $1 & disown; }
+function ep {
+  if [[ $(uname -s) == "Darwin" ]]; then
+    open -a "Emacs" --args --chdir $PWD --with-profile "$@"
+  else
+    emacs --with-profile $1 & disown
+  fi
+}
 
 alias rr="ranger"
 
