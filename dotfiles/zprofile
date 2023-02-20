@@ -1,5 +1,5 @@
 function macosx_zprofile {
-    eval "$(/opt/homebrew/bin/brew shellenv)"
+    [[ -d /opt/homebrew/bin ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
 [[ $(uname -s) == "Darwin" ]] && macosx_zprofile
