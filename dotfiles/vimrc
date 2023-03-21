@@ -1,5 +1,14 @@
 inoremap fd <ESC>
 vnoremap fd <ESC>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-d> <Del>
+inoremap <C-h> <BS>
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+vnoremap . :norm.<CR>
 set history=200
 set number
 set noswapfile
@@ -7,4 +16,3 @@ set hlsearch
 set ignorecase
 set incsearch
 syntax on
-vnoremap . :norm.<CR>
