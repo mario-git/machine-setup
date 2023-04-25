@@ -1,9 +1,7 @@
-function macosx_zprofile {
-    [[ -d /opt/homebrew/bin ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-    if [[ -d /usr/local/opt/openjdk/bin ]]; then export PATH="/usr/local/opt/openjdk/bin:$PATH"; fi
-}
-
-[[ $(uname -s) == "Darwin" ]] && macosx_zprofile
+if [[ $(uname -s) == "Darwin" ]]; then
+  [[ -d /opt/homebrew/bin ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+  if [[ -d /usr/local/opt/openjdk/bin ]]; then export PATH="/usr/local/opt/openjdk/bin:$PATH"; fi
+fi
 
 for file in ~/.zprofile.d/*
 do
