@@ -11,6 +11,7 @@
   loop: '{{ dotfile_exists.results }}'
   when: item.stat.exists
 
+## TODO: make it safe for non existing dirs (eg shadow-cljs)
 - name: Create symlinks for dotfiles
   file:
     src: "{{ lookup('env','PWD') }}/{{ item.src }}"

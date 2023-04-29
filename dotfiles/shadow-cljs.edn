@@ -1,0 +1,5 @@
+;; https://shadow-cljs.github.io/docs/UsersGuide.html#user-config
+{:dependencies
+ [[nrepl/nrepl "1.0.0"]
+  [cider/cider-nrepl "0.30.0"]
+  [cider/piggieback "0.5.3"]]}
