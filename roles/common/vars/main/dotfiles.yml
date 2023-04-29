@@ -1,4 +1,5 @@
 dotfiles:
+  - { src: 'dotfiles/deps.edn', dest: '~/.clojure/deps.edn' }
   - { src: 'dotfiles/lein_profiles.clj', dest: '~/.lein/profiles.clj' }
   - { src: 'dotfiles/p10k', dest: '~/.p10k.zsh' }
   - { src: 'dotfiles/vimrc', dest: '~/.vimrc' }
