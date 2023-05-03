@@ -1,8 +1,23 @@
 #!/usr/bin/env bash
 
+set -e
+
 if which nix; then
     echo "Nix already installed."
 else
     echo "Nix will be installed shortly..."
     curl -L https://nixos.org/nix/install | sh
+    echo "Nix installed successfully!"
+    echo "Now adding nix 22.11 to your channels..."
+    nix-channel --add https://nixos.org/channels/nixos-22.11 nixpkgs
+fi
+
+if which home-manager; then
+    echo "Home manager already installed."
+else
+    echo "We're getting there! Now installing nix home manager..."
+    # As per standalone installation https://nix-community.github.io/home-manager/index.html#sec-install-standalone
+    nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+    nix-channel --update
+    nix-shell '<home-manager>' -A install
 fi
