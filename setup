@@ -9,7 +9,7 @@ else
     curl -L https://nixos.org/nix/install | sh
     echo "Nix installed successfully!"
     echo "Now adding nix 22.11 to your channels..."
-    nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+    nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
     nix-channel --update
 fi
 
