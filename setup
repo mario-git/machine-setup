@@ -9,7 +9,8 @@ else
     curl -L https://nixos.org/nix/install | sh
     echo "Nix installed successfully!"
     echo "Now adding nix 22.11 to your channels..."
-    nix-channel --add https://nixos.org/channels/nixos-22.11 nixpkgs
+    nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
+    nix-channel --update
 fi
 
 if which home-manager; then
@@ -17,7 +18,7 @@ if which home-manager; then
 else
     echo "We're getting there! Now installing nix home manager..."
     # As per standalone installation https://nix-community.github.io/home-manager/index.html#sec-install-standalone
-    nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.11.tar.gz home-manager
+    nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
     nix-channel --update
     nix-shell '<home-manager>' -A install
 fi
