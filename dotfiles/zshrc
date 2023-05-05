@@ -140,12 +140,11 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+# nix
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
+export NIX_PATH="$HOME/.nix-defexpr/channels"
+
 for file in ~/.zshrc.d/*
 do
   source $file
 done
-
-# nix
-if [ -e /home/mario/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mario/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-export NIX_PATH="$HOME/.nix-defexpr/channels"
-# HOME MANAGER /home/mario/.config/home-manager/home.nix
