@@ -56,23 +56,23 @@ printf "\nDotfiles time!\n\n"
 
 function ensure_link {
     FROM="$(pwd)/dotfiles/$1"
-    TO="$2"
+    TO="$HOME/$2"
     TO_DIR="$(dirname "$TO")"
     if [ ! -f "$TO" ]; then
         printf "Linking missing dotfile %s\n" "$TO"
         [ ! -d "$TO_DIR" ] && mkdir -p "$TO_DIR"
-        ln -sf "$FROM" "$TO"
+        ln -s "$FROM" "$TO"
     else
 	printf "Skipped %s which already exists\n" "$TO"
     fi
 }
 
-ensure_link "deps.edn" "$HOME/.clojure/deps.edn"
-ensure_link "lein_profiles.clj" "$HOME/.lein/profiles.clj"
-ensure_link "shadow-cljs.edn" "$HOME/.shadow-cljs/config.edn"
-ensure_link "p10k" "$HOME/.p10k.zsh"
-ensure_link "vimrc" "$HOME/.vimrc"
-ensure_link "zprofile" "$HOME/.zprofile"
-ensure_link "zshrc" "$HOME/.zshrc"
+ensure_link "deps.edn" ".clojure/deps.edn"
+ensure_link "lein_profiles.clj" ".lein/profiles.clj"
+ensure_link "shadow-cljs.edn" ".shadow-cljs/config.edn"
+ensure_link "p10k" ".p10k.zsh"
+ensure_link "vimrc" ".vimrc"
+ensure_link "zprofile" ".zprofile"
+ensure_link "zshrc" ".zshrc"
 
 printf "\nAll done!\n"
