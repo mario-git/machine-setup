@@ -2,24 +2,25 @@
 
 set -e
 
+### nix
+
+printf "Nix time!\n\n"
+
 # TODO: handle channel update switch, set version (sed? :)) and put it in channels
 NIX_CHANNEL_TARGET="nixos-22.11"
 
 if which nix; then
-    echo "Nix already installed."
+    printf "Nix already installed.\n"
 else
-    echo "Nix will be installed shortly..."
+    printf "Nix will be installed shortly...\n"
     curl -L https://nixos.org/nix/install | sh
-    echo "Nix installed successfully!"
-    echo "Now adding $NIX_CHANNEL_TARGET to your channels..."
+    printf "\nNix installed successfully!\n"
+    printf "Now adding %s to your channels...\n" "$NIX_CHANNEL_TARGET"
     nix-channel --add "https://nixos.org/channels/$NIX_CHANNEL_TARGET" nixpkgs
     nix-channel --update
 fi
 
-echo "Now running ansible playbook..."
-ansible-playbook playbook.yml
-
-echo "Nix packages time!"
+printf "\nNix packages time!\n\n"
 
 declare -a deps=(
     bat
@@ -38,11 +39,36 @@ declare -a deps=(
 for dep in "${deps[@]}"
 do
     if which "$dep"; then
-        echo "$dep already installed"
+        printf "Skipped %s already installed\n" "$dep"
     else
-        echo "Installing $dep shortly..."
+        printf "Installing %s shortly...\n" "$dep"
 	nix-env -iA "nixpkgs.$dep"
     fi
 done
 
-echo "All done!"
+### dotfiles
+
+printf "\nDotfiles time!\n\n"
+
+function ensure_link {
+    FROM="$(pwd)/dotfiles/$1"
+    TO="$2"
+    TO_DIR="$(dirname "$TO")"
+    if [ ! -f "$TO" ]; then
+        printf "Linking missing dotfile %s\n" "$TO"
+        [ ! -d "$TO_DIR" ] && mkdir -p "$TO_DIR"
+        ln -sf "$FROM" "$TO"
+    else
+	printf "Skipped %s which already exists\n" "$TO"
+    fi
+}
+
+ensure_link "deps.edn" "$HOME/.clojure/deps.edn"
+ensure_link "lein_profiles.clj" "$HOME/.lein/profiles.clj"
+ensure_link "shadow-cljs.edn" "$HOME/.shadow-cljs/config.edn"
+ensure_link "p10k" "$HOME/.p10k.zsh"
+ensure_link "vimrc" "$HOME/.vimrc"
+ensure_link "zprofile" "$HOME/.zprofile"
+ensure_link "zshrc" "$HOME/.zshrc"
+
+printf "\nAll done!\n"
