@@ -2,7 +2,7 @@
 
 set -e
 
-# TODO: handle channel update switch, via sed probably :)
+# TODO: handle channel update switch, set version (sed? :)) and put it in channels
 NIX_CHANNEL_TARGET="nixos-22.11"
 
 if which nix; then
@@ -24,10 +24,14 @@ echo "Nix packages time!"
 declare -a deps=(
     bat
     direnv
+    envsubst
     fzf
+    jq
     rg
     shellcheck
+    stow
     thefuck
+    yq
 )
 
 for dep in "${deps[@]}"
