@@ -2,7 +2,8 @@
 
 set -e
 
-# TODO: handle channel update switch
+# TODO: handle channel update switch, via sed probably :)
+NIX_CHANNEL_TARGET="nixos-22.11"
 
 if which nix; then
     echo "Nix already installed."
@@ -10,12 +11,33 @@ else
     echo "Nix will be installed shortly..."
     curl -L https://nixos.org/nix/install | sh
     echo "Nix installed successfully!"
-    echo "Now adding nix 22.11 to your channels..."
-    nix-channel --add https://nixos.org/channels/nixos-22.11 nixpkgs
+    echo "Now adding $NIX_CHANNEL_TARGET to your channels..."
+    nix-channel --add "https://nixos.org/channels/$NIX_CHANNEL_TARGET" nixpkgs
     nix-channel --update
 fi
 
 echo "Now running ansible playbook..."
 ansible-playbook playbook.yml
+
+echo "Nix packages time!"
+
+declare -a deps=(
+    bat
+    direnv
+    fzf
+    rg
+    shellcheck
+    thefuck
+)
+
+for dep in "${deps[@]}"
+do
+    if which "$dep"; then
+        echo "$dep already installed"
+    else
+        echo "Installing $dep shortly..."
+	nix-env -iA "nixpkgs.$dep"
+    fi
+done
 
 echo "All done!"
