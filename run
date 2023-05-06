@@ -1,1 +1,21 @@
+#!/usr/bin/env bash
+
+set -e
+
+# TODO: handle channel update switch
+
+if which nix; then
+    echo "Nix already installed."
+else
+    echo "Nix will be installed shortly..."
+    curl -L https://nixos.org/nix/install | sh
+    echo "Nix installed successfully!"
+    echo "Now adding nix 22.11 to your channels..."
+    nix-channel --add https://nixos.org/channels/nixos-22.11 nixpkgs
+    nix-channel --update
+fi
+
+echo "Now running ansible playbook..."
 ansible-playbook playbook.yml
+
+echo "All done!"
