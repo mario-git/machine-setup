@@ -1,9 +1,9 @@
 # Machine setup
 
-My machine setup and dotfiles for Debian and Mac Os X.
+My machine setup for Linux and Mac Os X.
+It uses:
 
-Currently WIP.
+- [Nix](https://nixos.org/) to install packages;
+- Bash for dotfiles plumbing.
 
-## Usage
-
-`run` script.
+Usage: `run`.

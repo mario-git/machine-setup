@@ -1,7 +1,0 @@
-- name: Zplug
-  import_tasks:
-    zplug.yml
-
-- name: Dotfiles
-  import_tasks:
-    dotfiles.yml
