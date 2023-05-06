@@ -26,13 +26,10 @@ declare -a deps=(
     bat
     direnv
     envsubst
-    fzf
     jq
     rg
     shellcheck
-    stow
     tree
-    thefuck
     yq
 )
 
@@ -44,6 +41,13 @@ do
         printf "Installing %s shortly...\n" "$dep"
 	nix-env -iA "nixpkgs.$dep"
     fi
+done
+
+declare -a to_delete=(fzf stow thefuck)
+for d in "${to_delete[@]}"
+do
+    printf "Attempting to delete %s\n" "$d"
+    nix-env --uninstall "$d"
 done
 
 ### dotfiles
