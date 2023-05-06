@@ -1,19 +1,1 @@
 ansible-playbook playbook.yml
-
-## TODOs
-# bootstrap script to install python, pip, ansible
-# install programs
-# - Firefox
-# - Brave
-# - Keepass
-# - Emacs
-# - Tidal (no work)
-# - Spotify (no work)
-# - VS Code
-# Install dev tools, langs
-# - aws cli
-# - docker
-# - Clojure
-# - lein
-# - bb
-# - terraform
