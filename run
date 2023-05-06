@@ -30,6 +30,7 @@ declare -a deps=(
     rg
     shellcheck
     stow
+    tree
     thefuck
     yq
 )
