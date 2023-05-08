@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+## in case user needs to be made sudoer
+# su - mario
+# sudo usermod -aG sudo mario
+## to verify sudo group
+# getent group sudo
+
+sudo apt-get install curl git

@@ -7,3 +7,5 @@ It uses:
 - Bash for dotfiles plumbing.
 
 Usage: `run`.
+
+Dependencies: `git` to download this repo, `curl` download Nix.

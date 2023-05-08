@@ -27,7 +27,7 @@ declare -a deps=(
     direnv
     envsubst
     jq
-    rg
+    rg # TODO: as others, to be nix-installed with anther name.
     shellcheck
     tree
     yq
