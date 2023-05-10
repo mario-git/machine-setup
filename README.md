@@ -8,4 +8,4 @@ It uses:
 
 Usage: `run`.
 
-Dependencies: `git` to download this repo, `curl` download Nix.
+Dependencies: `git` to download this repo, `curl` to download Nix.
