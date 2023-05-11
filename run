@@ -33,6 +33,7 @@ function nix_dep {
     fi
 }
 
+nix_dep awscli2 aws
 nix_dep bat
 nix_dep direnv
 nix_dep envsubst
