@@ -14,7 +14,13 @@ if which nix > /dev/null 2>&1; then
 else
     printf "Nix will be installed shortly...\n"
     curl -L https://nixos.org/nix/install | sh
+
+    # already in .zshrc, but needed first time
+    if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
+    export NIX_PATH="$HOME/.nix-defexpr/channels"
+
     printf "\nNix installed successfully!\n"
+
     printf "Now adding %s to your channels...\n" "$NIX_CHANNEL_TARGET"
     nix-channel --add "https://nixos.org/channels/$NIX_CHANNEL_TARGET" nixpkgs
     nix-channel --update
@@ -35,18 +41,21 @@ function nix_dep {
 
 nix_dep awscli2 aws
 nix_dep bat
+nix_dep coreutils sha256sum
 nix_dep direnv
 nix_dep envsubst
+nix_dep gnupg gpg
 nix_dep jq
 nix_dep ripgrep rg
 nix_dep shellcheck
 nix_dep tree
+nix_dep vim
 nix_dep yq
 
-for to_delete in fzf stow thefuck; do
-    printf "Attempting to delete %s\n" "$to_delete"
-    nix-env --uninstall "$to_delete"
-done
+# for to_delete in fzf stow thefuck; do
+#     printf "Attempting to delete %s\n" "$to_delete"
+#     nix-env --uninstall "$to_delete"
+# done
 
 ### dotfiles
 
