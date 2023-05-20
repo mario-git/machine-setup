@@ -3,7 +3,10 @@ if [[ $(uname -s) == "Darwin" ]]; then
   if [[ -d /usr/local/opt/openjdk/bin ]]; then export PATH="/usr/local/opt/openjdk/bin:$PATH"; fi
 fi
 
-for file in ~/.zprofile.d/*
-do
-  source $file
-done
+[[ ! -d ~/.zprofile.d ]] && mkdir ~/.zprofile.d
+if [ "$(ls -A ~/.zprofile.d )" ]; then
+  for file in ~/.zprofile.d/*
+  do
+    source $file
+  done
+fi
