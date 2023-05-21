@@ -146,6 +146,7 @@ alias .....="cd ../../../.."
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 export NIX_PATH="$HOME/.nix-defexpr/channels"
 
+# .zshrc.d
 [ ! -d ~/.zshrc.d ] && mkdir ~/.zshrc.d
 if [ "$(ls -A ~/.zshrc.d )" ]; then
   for file in ~/.zshrc.d/*
