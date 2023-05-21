@@ -36,7 +36,11 @@ zplug load
 
 # os specific bits
 
-[ -f "/etc/apt/sources.list" ] && alias editsrc="sudo vim /etc/apt/sources.list"
+if [[ $(uname -s) == "Linux" ]]; then
+  [ ! -d ~/.local/share/applications ] && ln -s ~/.nix-profile/share/applications ~/.local/share/applications
+  [ ! -d ~/.local/share/icons ] && ln -s ~/.nix-profile/share/icons ~/.local/share/icons
+  [ -f /etc/apt/sources.list ] && alias editsrc="sudo vim /etc/apt/sources.list"
+fi
 
 # path
 
