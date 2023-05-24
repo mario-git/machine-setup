@@ -62,7 +62,7 @@ nix_dep terraform
 
 # ui
 nix_dep emacs
-nix_dep firefox
+# nix_dep firefox
 nix_dep keepassxc
 
 # for to_delete in fzf stow thefuck; do
@@ -88,6 +88,7 @@ function ensure_link {
 }
 
 ensure_link "deps.edn" ".clojure/deps.edn"
+ensure_link "karabiner.json" ".config/karabiner/karabiner.json" # OK, Mac only, to be handled
 ensure_link "lein_profiles.clj" ".lein/profiles.clj"
 ensure_link "shadow-cljs.edn" ".shadow-cljs/config.edn"
 ensure_link "p10k" ".p10k.zsh"
