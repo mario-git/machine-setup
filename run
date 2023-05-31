@@ -93,6 +93,7 @@ ensure_link "lein_profiles.clj" ".lein/profiles.clj"
 ensure_link "shadow-cljs.edn" ".shadow-cljs/config.edn"
 ensure_link "p10k" ".p10k.zsh"
 ensure_link "vimrc" ".vimrc"
+ensure_link "xmodmap" ".Xmodmap"
 ensure_link "zprofile" ".zprofile"
 ensure_link "zshrc" ".zshrc"
 
