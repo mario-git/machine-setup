@@ -19,6 +19,7 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "agkozak/zsh-z"
+zplug "chisui/zsh-nix-shell", from:github
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "romkatv/powerlevel10k", as:theme, depth:1
