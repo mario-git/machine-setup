@@ -46,6 +46,7 @@ nix_dep direnv
 nix_dep envsubst
 nix_dep gnupg gpg
 nix_dep jq
+nix_dep ranger
 nix_dep ripgrep rg
 nix_dep shellcheck
 nix_dep tree
@@ -57,6 +58,7 @@ nix_dep awscli2 aws
 nix_dep babashka bb
 nix_dep clojure
 nix_dep clojure-lsp
+nix_dep jet
 nix_dep leiningen lein
 nix_dep terraform
 
