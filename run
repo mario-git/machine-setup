@@ -90,6 +90,7 @@ function ensure_link {
 }
 
 ensure_link "deps.edn" ".clojure/deps.edn"
+ensure_link "i3-config" ".config/i3/config"
 ensure_link "karabiner.json" ".config/karabiner/karabiner.json" # OK, Mac only, to be handled
 ensure_link "lein_profiles.clj" ".lein/profiles.clj"
 ensure_link "shadow-cljs.edn" ".shadow-cljs/config.edn"
