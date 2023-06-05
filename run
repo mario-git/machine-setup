@@ -52,6 +52,7 @@ nix_dep shellcheck
 nix_dep tree
 nix_dep vim
 nix_dep yq
+# linux only: bluez, blueman
 
 # dev
 nix_dep awscli2 aws

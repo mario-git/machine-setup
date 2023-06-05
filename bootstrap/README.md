@@ -1,6 +1,6 @@
 ### Other bits
 
-Caps-lock as Ctrl in Linux: add
+Caps-lock as Ctrl in Debian: add
 
 `XKBOPTIONS="ctrl:nocaps"`
 
