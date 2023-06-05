@@ -196,3 +196,6 @@ bar {
   }
   status_command i3status
 }
+
+# background image / wallpaper with feh, currently https://wallpapercave.com/w/s5DTVf6
+exec --no-startup-id feh --bg-scale ~/background.jpg
