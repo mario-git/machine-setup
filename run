@@ -7,7 +7,7 @@ set -e
 printf "Nix time!\n\n"
 
 # TODO: handle channel update switch, set version (sed? :)) and put it in channels
-NIX_CHANNEL_TARGET="nixos-22.11"
+NIX_CHANNEL_TARGET="nixos-23.05"
 
 if which nix > /dev/null 2>&1; then
     printf "Nix already installed.\n"
