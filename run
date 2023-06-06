@@ -92,12 +92,15 @@ function ensure_link {
 
 ensure_link "deps.edn" ".clojure/deps.edn"
 ensure_link "i3-config" ".config/i3/config"
+ensure_link "i3-autostart" ".config/i3/autostart" # make writable
+ensure_link "1-screen" ".screenlayout/1-screen"
+ensure_link "2-screens" ".screenlayout/2-screens"
+ensure_link "background.jpg" ".config/i3/background.jpg" # OK, not really a dotfile. For login screen, lightdm-gtk-greeter-settings
 ensure_link "karabiner.json" ".config/karabiner/karabiner.json" # OK, Mac only, to be handled
 ensure_link "lein_profiles.clj" ".lein/profiles.clj"
 ensure_link "shadow-cljs.edn" ".shadow-cljs/config.edn"
 ensure_link "p10k" ".p10k.zsh"
 ensure_link "vimrc" ".vimrc"
-ensure_link "xmodmap" ".Xmodmap"
 ensure_link "zprofile" ".zprofile"
 ensure_link "zshrc" ".zshrc"
 

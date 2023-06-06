@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# just in case: https://gist.github.com/jatcwang/ae3b7019f219b8cdc6798329108c9aee
+setxkbmap gb -variant extd
+setxkbmap -option ctrl:nocaps
+
+if xrandr --current | grep "HDMI-1 connected"; then
+  ~/.screenlayout/2-screens
+fi
