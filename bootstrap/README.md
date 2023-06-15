@@ -1,9 +1,17 @@
-### Other bits
+## Other bits
 
-Caps-lock as Ctrl in Debian: add
+### Debian
+
+Caps-lock as Ctrl, add
 
 `XKBOPTIONS="ctrl:nocaps"`
 
 to file
 
 `/etc/default/keyboard`
+
+### Fedora
+
+To achive via Thunar:
+
+`sudo dnf install thunar-archive-plugin xarchiver`

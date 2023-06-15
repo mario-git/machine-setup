@@ -207,13 +207,14 @@ workspace 3 output HDMI-1 eDP-1
 workspace 4 output eDP-1
 workspace 5 output eDP-1
 
-# TODO: fix this
-assign [class="xfce4-terminal"] 1
+# TODO: temp excluded
+# assign [class="xfce4-terminal"] 1
 assign [class="Firefox"] 2
 assign [class="Emacs"] 3
 assign [class="Thunar"] 4
 assign [class="KeePassXC"] 4
 
+# TODO: fix this
 # exec --no-startup-id xfce4-terminal
 # exec --no-startup-id xfce4-terminal
 # exec --no-startup-id emacs

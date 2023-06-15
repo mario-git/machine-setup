@@ -6,4 +6,6 @@ setxkbmap -option ctrl:nocaps
 
 if xrandr --current | grep "HDMI-1 connected"; then
   ~/.screenlayout/2-screens
+else
+  ~/.screenlayout/1-screen2-screens2-screens
 fi
