@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
+# gimme dotfiles
+defaults write com.apple.Finder AppleShowAllFiles true
+
 brew install --cask anki emacs firefox flameshot google-chrome iterm2 karabiner-elements keepassxc skype virtualbox zoom
