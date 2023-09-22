@@ -1,5 +1,7 @@
 if [[ $(uname -s) == "Darwin" ]]; then
   [[ -d /opt/homebrew/bin ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+  if [[ -d /Users/$USER/.nix-profile/bin ]]; then export PATH="/Users/$USER/.nix-profile/bin:$PATH"; fi
+  if [[ -d /nix/var/nix/profiles/default/bin ]]; then export PATH="/nix/var/nix/profiles/default/bin:$PATH"; fi
   if [[ -d /usr/local/opt/openjdk/bin ]]; then export PATH="/usr/local/opt/openjdk/bin:$PATH"; fi
 fi
 
