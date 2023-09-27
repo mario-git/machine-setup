@@ -76,8 +76,6 @@ alias gbl="git branch --list"
 alias gbn="git checkout -b"
 alias gtrunk="git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
 alias gbm="gtrunk | xargs git checkout && git pull --rebase"
-alias gbkeeptrunk="git branch | grep -v $(eval gtrunk) | xargs git branch -D"
-alias gbclean="gbm && gbkeeptrunk"
 alias gc="git commit -m"
 alias gca="git commit --amend"
 alias gcan="gca --no-edit"
@@ -107,6 +105,12 @@ alias gstn="git stash save -u"
 alias gstp="git stash pop"
 alias gundos="git reset --soft HEAD^"
 alias gundoh="git reset --hard HEAD^"
+function gbclean {
+  gco
+  gbm
+  _TRUNK=$(eval gtrunk)
+  git branch | grep -v $_TRUNK | xargs git branch -D
+}
 
 alias sshco="vim ~/.ssh/config"
 
