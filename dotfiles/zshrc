@@ -115,6 +115,9 @@ function gbclean {
 alias sshco="vim ~/.ssh/config"
 
 # emacs
+
+export LSP_USE_PLISTS=true
+
 alias em="cd ~/.emacs.d"
 alias sm="cd ~/spacemacs"
 function ep {
