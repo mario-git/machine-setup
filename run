@@ -63,15 +63,10 @@ nix_dep jet
 nix_dep leiningen lein
 nix_dep terraform
 
-# ui
-nix_dep emacs
-# nix_dep firefox
-nix_dep keepassxc
-
-# for to_delete in fzf stow thefuck; do
-#     printf "Attempting to delete %s\n" "$to_delete"
-#     nix-env --uninstall "$to_delete"
-# done
+for to_delete in keepassxc go polylith emacs ranger; do
+    printf "Attempting to delete %s\n" "$to_delete"
+    nix-env --uninstall "$to_delete"
+done
 
 ### dotfiles
 
@@ -102,6 +97,7 @@ ensure_link "shadow-cljs.edn" ".shadow-cljs/config.edn"
 ensure_link "p10k" ".p10k.zsh"
 ensure_link "vimrc" ".vimrc"
 ensure_link "zprofile" ".zprofile"
+ensure_link "zshenv" ".zshenv"
 ensure_link "zshrc" ".zshrc"
 
 printf "\nAll done!\n"
