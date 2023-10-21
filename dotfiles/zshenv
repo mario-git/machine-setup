@@ -1,4 +1,5 @@
 # https://checkoway.net/musings/nix/
+# might be necessary only for zsh, not bash
 if [[ $(uname -s) == "Darwin" ]]; then
   [[ -o login ]] && export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 
