@@ -42,8 +42,6 @@ function nix_dep {
 # basic shell utils
 nix_dep bat
 nix_dep coreutils sha256sum
-nix_dep direnv
-nix_dep envsubst
 nix_dep gnupg gpg
 nix_dep jq
 nix_dep ranger
@@ -63,7 +61,7 @@ nix_dep jet
 nix_dep leiningen lein
 nix_dep terraform
 
-for to_delete in keepassxc go polylith emacs ranger; do
+for to_delete in direnv envsubtst keepassxc go polylith emacs ranger; do
     printf "Attempting to delete %s\n" "$to_delete"
     nix-env --uninstall "$to_delete"
 done
