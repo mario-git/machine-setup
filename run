@@ -2,69 +2,25 @@
 
 set -e
 
-### nix
-
-printf "Nix time!\n\n"
-
-# TODO: handle channel update switch, set version (sed? :)) and put it in channels
-NIX_CHANNEL_TARGET="nixos-23.05"
-
-if which nix > /dev/null 2>&1; then
-    printf "Nix already installed.\n"
-else
-    printf "Nix will be installed shortly...\n"
-    curl -L https://nixos.org/nix/install | sh
-
-    # already in .zshrc, but needed first time
-    if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
-    export NIX_PATH="$HOME/.nix-defexpr/channels"
-
-    printf "\nNix installed successfully!\n"
-
-    printf "Now adding %s to your channels...\n" "$NIX_CHANNEL_TARGET"
-    nix-channel --add "https://nixos.org/channels/$NIX_CHANNEL_TARGET" nixpkgs
-    nix-channel --update
-fi
-
-printf "\nNix packages time!\n\n"
-
-function nix_dep {
-    DEP_NAME="$1"
-    DEP_EXECUTABLE=${2:-$DEP_NAME}
-    if which "$DEP_EXECUTABLE" > /dev/null 2>&1; then
-        printf "Skipped %s already installed\n" "$DEP_NAME"
-    else
-        printf "Installing %s shortly...\n" "$DEP_NAME"
-	nix-env -iA "nixpkgs.$DEP_NAME"
-    fi
-}
-
+# TODO: they were in Nix, to be scripted
 # basic shell utils
-nix_dep bat
-nix_dep coreutils sha256sum
-nix_dep gnupg gpg
-nix_dep jq
-nix_dep ranger
-nix_dep ripgrep rg
-nix_dep shellcheck
-nix_dep tree
-nix_dep vim
-nix_dep yq
+# bat
+# coreutils sha256sum
+# gnupg gpg
+# jq
+# ripgrep rg
+# shellcheck
+# tree
+# vim
+# yq
 # linux only: bluez, blueman
-
-# dev
-nix_dep awscli2 aws
-nix_dep babashka bb
-nix_dep clojure
-nix_dep clojure-lsp
-nix_dep jet
-nix_dep leiningen lein
-nix_dep terraform
-
-for to_delete in direnv envsubtst keepassxc go polylith emacs ranger; do
-    printf "Attempting to delete %s\n" "$to_delete"
-    nix-env --uninstall "$to_delete"
-done
+# awscli2 aws
+# babashka bb
+# clojure
+# clojure-lsp
+# jet
+# leiningen
+# terraform
 
 ### dotfiles
 

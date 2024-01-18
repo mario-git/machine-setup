@@ -19,7 +19,6 @@ fi
 source ~/.zplug/init.zsh
 
 zplug "agkozak/zsh-z"
-zplug "chisui/zsh-nix-shell", from:github
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/key-bindings", from:oh-my-zsh
 zplug "romkatv/powerlevel10k", as:theme, depth:1
@@ -34,12 +33,6 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
-
-# os specific bits
-
-if [[ $(uname -s) == "Linux" ]]; then
-  [ ! -d ~/.local/share/applications ] && ln -s ~/.nix-profile/share/applications ~/.local/share/applications
-fi
 
 # path
 
@@ -154,10 +147,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-
-# nix
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
-export NIX_PATH="$HOME/.nix-defexpr/channels"
 
 # exports
 export EDITOR=vim
