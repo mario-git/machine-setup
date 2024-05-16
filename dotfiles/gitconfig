@@ -8,3 +8,5 @@
 	path = ~/.gitconfig_work
 [push]
 	default = current
+[core]
+	editor = vim
