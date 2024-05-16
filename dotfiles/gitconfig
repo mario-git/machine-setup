@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = main
+[includeIf "gitdir:~/code/"]
+	path = ~/.gitconfig_default
+[includeIf "gitdir:~/oviramcs/"]
+	path = ~/.gitconfig_default
+[includeIf "gitdir:~/code/work/"]
+	path = ~/.gitconfig_work
+[push]
+	default = current
