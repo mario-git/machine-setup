@@ -2,7 +2,7 @@
 
 set -e
 
-# TODO: they were in Nix, to be scripted
+# TODO: to be scripted
 # basic shell utils
 # bat
 # coreutils sha256sum
@@ -21,6 +21,7 @@ set -e
 # jet
 # leiningen
 # terraform
+# fastfetch
 
 ### dotfiles
 
