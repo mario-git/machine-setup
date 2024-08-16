@@ -3,4 +3,9 @@
 # gimme dotfiles
 defaults write com.apple.Finder AppleShowAllFiles true
 
-brew install --cask anki emacs firefox flameshot google-chrome iterm2 karabiner-elements keepassxc skype virtualbox zoom
+brew install --cask anki firefox flameshot google-chrome iterm2 karabiner-elements keepassxc skype virtualbox zoom
+
+
+# install emacs-plus (maybe without spacemacs icon)
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --with-spacemacs-icon --with-native-comp
