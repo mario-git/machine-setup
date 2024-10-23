@@ -72,13 +72,14 @@ alias gbm="gtrunk | xargs git checkout && git pull --rebase"
 alias gc="git commit -m"
 alias gca="git commit --amend"
 alias gcan="gca --no-edit"
-alias gaca="gaa && gca"
-alias gacan="gaa && gcan"
+alias gaaca="gaa && gca"
+alias gaacan="gaa && gcan"
 alias gcanow="git commit --amend --date=now"
 alias gcanown="gcanow --no-edit"
 alias gcl="git clone"
-alias gco="git checkout ."
-alias gac="gaa && gc"
+alias gco="git checkout"
+alias gcoa="git checkout ."
+alias gaac="gaa && gc"
 alias gd="git diff"
 alias gclean="git restore . && git clean -df"
 alias gdca="git diff --cached"
@@ -98,7 +99,7 @@ alias gstp="git stash pop"
 alias gundos="git reset --soft HEAD^"
 alias gundoh="git reset --hard HEAD^"
 function gbclean {
-  gco
+  gcoa
   gbm
   _TRUNK=$(eval gtrunk)
   git branch | grep -v $_TRUNK | xargs git branch -D
