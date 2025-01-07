@@ -2,4 +2,4 @@
 	email = mario.giampietri@gmail.com
 	name = Mario Giampietri
 [core]
-	sshCommand = ssh -i ~/.ssh/mario-git-github
+	sshCommand = ssh -i ~/.ssh/github-mario-git
