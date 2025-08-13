@@ -1,5 +1,5 @@
-{:repl {:dependencies [[nrepl "1.2.0"]]
-	:plugins [[cider/cider-nrepl "0.49.1"]
+{:repl {:dependencies [[nrepl "1.3.0"]]
+	:plugins [[cider/cider-nrepl "0.57.0"]
                   [mx.cider/enrich-classpath "1.19.3"]]}
  :user {:dependencies [[criterium "0.4.6"]
                        [dev.weavejester/hashp "0.4.0"]
