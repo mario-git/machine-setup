@@ -10,8 +10,8 @@ then
 fi
 export PATH
 
-# added by uv self installer. Meh
-. "$HOME/.local/bin/env"
+# (right side) added by uv self installer. Meh
+[ ! -f "$HOME/.local/bin/env" ] || . "$HOME/.local/bin/env"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
