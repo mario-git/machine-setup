@@ -41,6 +41,9 @@ export PATH="/home/mario/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 alias path="echo $PATH | tr  ':'  '\n' | nl"
 
+# added by uv self installer. Meh
+. "$HOME/.local/bin/env"
+
 # history
 setopt hist_expire_dups_first # When trimming history, lose oldest duplicates first
 setopt hist_ignore_all_dups # Do not write events to history that are duplicates of previous events

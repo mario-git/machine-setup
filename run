@@ -3,7 +3,6 @@
 set -e
 
 # TODO: to be scripted
-# basic shell utils
 # bat
 # coreutils sha256sum
 # gnupg gpg
@@ -21,7 +20,7 @@ set -e
 # jet
 # leiningen
 # terraform
-# fastfetch
+# python-lsp-server
 
 ### dotfiles
 
