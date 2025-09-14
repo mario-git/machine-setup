@@ -4,10 +4,17 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-d> <Del>
 inoremap <C-h> <BS>
-inoremap <C-a> <C-o>^
+inoremap <C-a> <C-o>0
 inoremap <C-e> <C-o>$
 inoremap <C-n> <Down>
 inoremap <C-p> <Up>
+
+nnoremap <C-a> 0
+nnoremap <C-e> $
+
+set virtualedit=onemore
+nnoremap $ $l
+
 vnoremap . :norm.<CR>
 set history=200
 set number
@@ -16,3 +23,5 @@ set hlsearch
 set ignorecase
 set incsearch
 syntax on
+
+set whichwrap+=h,l,<,>,[,]
