@@ -45,7 +45,7 @@ alias path="echo $PATH | tr  ':'  '\n' | nl"
 [ ! -f "$HOME/.local/bin/env" ] || . "$HOME/.local/bin/env"
 
 # mise
-command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+which mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
 
 # history
 setopt hist_expire_dups_first # When trimming history, lose oldest duplicates first

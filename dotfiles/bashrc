@@ -42,7 +42,7 @@ unset rc
 ### my goodies
 
 # mise - if we ever switch to bash
-#command -v mise >/dev/null 2>&1 && eval "$(mise activate bash)"
+#which mise >/dev/null 2>&1 && eval "$(mise activate bash)"
 
 # directory navigation
 # directory navigation
