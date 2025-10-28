@@ -44,6 +44,8 @@ alias path="echo $PATH | tr  ':'  '\n' | nl"
 # (right side) added by uv self installer. Meh
 [ ! -f "$HOME/.local/bin/env" ] || . "$HOME/.local/bin/env"
 
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh)"
+
 # history
 setopt hist_expire_dups_first # When trimming history, lose oldest duplicates first
 setopt hist_ignore_all_dups # Do not write events to history that are duplicates of previous events

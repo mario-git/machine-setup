@@ -1,5 +1,9 @@
 ## Other bits
 
+### Mise
+
+`curl https://mise.run | MISE_INSTALL_PATH=~/.local/bin/mise sh`
+
 ### Debian
 
 Caps-lock as Ctrl, add
