@@ -1,6 +1,6 @@
 # Machine setup
 
-My machine setup for Linux and Mac Os X.
+My machine setup for Linux and macOS.
 
 Usage: `./run`.
 
