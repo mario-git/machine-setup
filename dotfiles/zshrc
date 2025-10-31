@@ -37,7 +37,7 @@ zplug load
 # path
 
 [ ! -d "$HOME/.local/bin" ] && mkdir -p "$HOME/.local/bin"
-export PATH="/home/mario/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 alias path="echo $PATH | tr  ':'  '\n' | nl"
 
