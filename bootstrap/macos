@@ -1,11 +1,43 @@
 #!/usr/bin/env bash
 
+# xcode stuff
+softwareupdate --list # this to find the version number below
+sudo softwareupdate --install "Command Line Tools for Xcode 26.5-26.5" # <- version to sort
+
+# port to be installed via pkg manually
+https://www.macports.org/install.php
+
+# then, install brew - https://brew.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# then run ./run  on this repo
+
+brew install --cask anki firefox brave-browser google-chrome iterm2 karabiner-elements keepassxc zoom signal
+brew install ripgrep ripgrep-all bat tree jq yq shellcheck
+
+sudo port install flameshot
+
+# install emacs-plus
+brew tap d12frosted/emacs-plus
+
+# OS wise
+# sane scroll direction
+defaults write -g com.apple.swipescrolldirection -bool false
+
+# hide dock, put to the left, smaller
+# what to keep in dock
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock tilesize -int 36
+
+# wipe all dock items
+defaults write com.apple.dock persistent-apps -array
+killall Dock
+killall SystemUIServer 2>/dev/null || true
+
 # gimme dotfiles
 defaults write com.apple.Finder AppleShowAllFiles true
 
-brew install --cask anki firefox flameshot google-chrome iterm2 karabiner-elements keepassxc zoom
-
-
-# install emacs-plus (maybe without spacemacs icon)
-brew tap d12frosted/emacs-plus
-brew install emacs-plus --with-spacemacs-icon --with-native-comp
+# yet to sort
+# language GB extended PC (keyboard settngs)
+# audio menu visible
