@@ -12,13 +12,17 @@ https://www.macports.org/install.php
 
 # then run ./run  on this repo
 
-brew install --cask anki firefox brave-browser google-chrome iterm2 karabiner-elements keepassxc zoom signal
 brew install ripgrep ripgrep-all bat tree jq yq shellcheck
+# TODO: write an emacs function to sort word in a line :)
+brew install --cask anki firefox brave-browser google-chrome iterm2 karabiner-elements keepassxc zoom signal visual-studio-code
 
 sudo port install flameshot
 
-# install emacs-plus
 brew tap d12frosted/emacs-plus
+
+# java & clojure https://clojure.org/guides/install_clojure
+brew install --cask temurin@25
+brew install clojure/tools/clojure leiningen borkdude/brew/babashka
 
 # OS wise
 # sane scroll direction
@@ -30,6 +34,7 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock tilesize -int 36
 
+
 # wipe all dock items
 defaults write com.apple.dock persistent-apps -array
 killall Dock
@@ -38,6 +43,10 @@ killall SystemUIServer 2>/dev/null || true
 # gimme dotfiles
 defaults write com.apple.Finder AppleShowAllFiles true
 
-# yet to sort
+# weirdest "feature" ever to be turned off (dots appearing in VS Code + Vim when entering insert mode and pressing spacebar twice)
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+
+# yet to sort/automate
 # language GB extended PC (keyboard settngs)
 # audio menu visible
