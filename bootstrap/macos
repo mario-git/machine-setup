@@ -22,7 +22,7 @@ brew tap d12frosted/emacs-plus
 
 # java & clojure https://clojure.org/guides/install_clojure
 brew install --cask temurin@25
-brew install clojure/tools/clojure leiningen borkdude/brew/babashka
+brew install clojure/tools/clojure leiningen borkdude/brew/babashka clojure-lsp
 
 # OS wise
 # sane scroll direction
