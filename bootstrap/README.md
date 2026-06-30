@@ -19,3 +19,9 @@ to file
 To achive via Thunar:
 
 `sudo dnf install thunar-archive-plugin xarchiver`
+
+### Rust
+
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+
+As per https://rust-lang.org/tools/install/
