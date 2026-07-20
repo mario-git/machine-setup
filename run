@@ -54,7 +54,6 @@ ensure_link "gitconfig_default" ".gitconfig_default"
 ensure_link "ignore" ".ignore"
 ensure_link "karabiner.json" ".config/karabiner/karabiner.json" # OK, Mac only, to be handled
 ensure_link "lein_profiles.clj" ".lein/profiles.clj"
-ensure_link "shadow-cljs.edn" ".shadow-cljs/config.edn"
 ensure_link "p10k" ".p10k.zsh"
 ensure_link "vimrc" ".vimrc"
 ensure_link "zprofile" ".zprofile"
