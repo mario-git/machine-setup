@@ -41,6 +41,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 alias path="echo $PATH | tr  ':'  '\n' | nl"
 
+if [[ $(uname -s) == "Darwin" ]]; then
+    export PATH="$PATH:/Applications/SuperCollider.app/Contents/Resources:/Applications/SuperCollider.app/Contents/MacOS"
+fi
+
 # (right side) added by uv self installer. Meh
 [ ! -f "$HOME/.local/bin/env" ] || . "$HOME/.local/bin/env"
 
