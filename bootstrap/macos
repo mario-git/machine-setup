@@ -16,7 +16,11 @@ brew install ripgrep ripgrep-all bat tree jq yq shellcheck
 # TODO: write an emacs function to sort word in a line :)
 brew install --cask anki firefox brave-browser google-chrome iterm2 karabiner-elements keepassxc zoom signal visual-studio-code
 
-sudo port install flameshot
+# https://github.com/flameshot-org/flameshot#macos
+brew tap flameshot-org/flameshot
+brew trust --cask flameshot-org/flameshot/flameshot-org-flameshot
+brew install flameshot-org-flameshot
+sudo xattr -rd com.apple.quarantine /Applications/flameshot.app
 
 brew tap d12frosted/emacs-plus
 
