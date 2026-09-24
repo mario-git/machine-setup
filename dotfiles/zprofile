@@ -1,6 +1,9 @@
 if [[ $(uname -s) == "Darwin" ]]; then
   [[ -d /opt/homebrew/bin ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
   if [[ -d /usr/local/opt/openjdk/bin ]]; then export PATH="/usr/local/opt/openjdk/bin:$PATH"; fi
+  # macports https://www.macports.org/install.php
+  if [[ -d /opt/local/bin ]]; then export PATH="/opt/local/bin:$PATH"; fi
+  if [[ -d /opt/local/sbin ]]; then export PATH="/opt/local/sbin:$PATH"; fi
 fi
 
 [[ ! -d ~/.zprofile.d ]] && mkdir ~/.zprofile.d
