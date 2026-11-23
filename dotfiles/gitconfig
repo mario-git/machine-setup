@@ -2,7 +2,7 @@
 	defaultBranch = main
 [includeIf "gitdir:~/code/"]
 	path = ~/.gitconfig_default
-[includeIf "gitdir:~/oviramcs/"]
+[includeIf "gitdir:~/.emacs.d/"]
 	path = ~/.gitconfig_default
 [includeIf "gitdir:~/code/work/"]
 	path = ~/.gitconfig_work

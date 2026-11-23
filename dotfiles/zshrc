@@ -178,3 +178,6 @@ fi
 
 # https://github.com/agkozak/zsh-z?tab=readme-ov-file#settings
 ZSHZ_NO_RESOLVE_SYMLINKS=1
+
+# opencode
+export PATH=/home/mario/.opencode/bin:$PATH
