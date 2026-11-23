@@ -54,4 +54,9 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-. "$HOME/.cargo/env"
+
+# rust
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+# haskell
+[ -f "$HOME/.ghcup/env" ] && source ${HOME}/.ghcup/env
